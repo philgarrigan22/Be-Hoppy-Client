@@ -22,17 +22,17 @@ class SignUp extends Component {
   onSignUp = event => {
     event.preventDefault()
 
-    const { alert, history, setUser } = this.props
+    const { snackBar, history, setUser } = this.props
 
     signUp(this.state)
       .then(() => signIn(this.state))
       .then(res => setUser(res.data.user))
-      .then(() => alert(messages.signUpSuccess, 'success'))
+      .then(() => snackBar(messages.signUpSuccess, 'success'))
       .then(() => history.push('/'))
       .catch(error => {
         console.error(error)
         this.setState({ email: '', password: '', passwordConfirmation: '' })
-        alert(messages.signUpFailure, 'danger')
+        snackBar(messages.signUpFailure, 'error')
       })
   }
 
