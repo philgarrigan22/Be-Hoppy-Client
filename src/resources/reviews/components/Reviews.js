@@ -84,6 +84,9 @@ class Reviews extends Component {
                 <p>Location: {review.location}</p>
                 <p>Flavor: {review.flavor}</p>
               </div>
+              <Button component={Link} to={'/reviews/' + review.id} variant="contained" color="primary">
+                View
+              </Button>
             </Paper>
           ))}
         </div>
