@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 
 import Button from '@material-ui/core/Button'
 
@@ -26,6 +26,7 @@ const ReviewForm = (
       <input placeholder={flavor} value={flavor} name="flavor" onChange={handleChange} />
 
       <Button type="submit" variant="contained" color="primary">Submit</Button>
+      <Button component={Link} to="/reviews" variant="contained" color="secondary">Cancel</Button>
     </form>
   </Fragment>
 )
