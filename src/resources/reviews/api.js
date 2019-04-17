@@ -40,3 +40,14 @@ export const deleteReview = (user, id) => {
     }
   })
 }
+
+export const createReview = (user, review) => {
+  return axios({
+    url: `${apiUrl}/reviews`,
+    method: 'POST',
+    headers: {
+      'Authorization': `Token token=${user.token}`
+    },
+    data: { review: review }
+  })
+}

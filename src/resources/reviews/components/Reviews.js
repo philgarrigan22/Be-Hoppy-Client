@@ -51,7 +51,7 @@ class Reviews extends Component {
         <Fragment>
           <Paper>
             <h2>Looks like you have no reviews yet! Get started by reviewing your favorite beers, then check back here.</h2>
-            <Button variant="contained" color="secondary">
+            <Button component={Link} to="/reviews-create" variant="contained" color="secondary">
                       Create Review
               <AddIcon />
             </Button>

@@ -10,6 +10,7 @@ import SignOut from './auth/components/SignOut'
 import ChangePassword from './auth/components/ChangePassword'
 import Reviews from './resources/reviews/components/Reviews'
 import OneReview from './resources/reviews/components/OneReview'
+import CreateReview from './resources/reviews/components/CreateReview'
 
 // import Alert from 'react-bootstrap/Alert'
 import { withSnackbar, SnackbarProvider } from 'notistack'
@@ -66,6 +67,9 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} exact path='/reviews/:id' render={() => (
             <OneReview snackBar={this.snackBar} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/reviews-create' render={() => (
+            <CreateReview snackBar={this.snackBar} user={user} />
           )} />
 
         </SnackbarProvider>
