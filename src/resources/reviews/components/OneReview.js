@@ -3,6 +3,7 @@ import { withRouter, Link, Redirect } from 'react-router-dom'
 
 import messages from '../messages'
 import { showOneReview, deleteReview } from '../api'
+import '../../../css/reviews/Review.scss'
 
 import LinearProgress from '@material-ui/core/LinearProgress'
 import Paper from '@material-ui/core/Paper'

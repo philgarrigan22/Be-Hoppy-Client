@@ -4,6 +4,7 @@ import { withRouter, Link } from 'react-router-dom'
 import { showReviews } from '../api'
 import messages from '../messages'
 
+import '../../../css/reviews/Review.scss'
 import LinearProgress from '@material-ui/core/LinearProgress'
 import Fab from '@material-ui/core/Fab'
 import AddIcon from '@material-ui/icons/Add'
@@ -83,10 +84,10 @@ class Reviews extends Component {
                 <p>Type: {review.beer_type}</p>
                 <p>Location: {review.location}</p>
                 <p>Flavor: {review.flavor}</p>
-              </div>
-              <Button component={Link} to={'/reviews/' + review.id} variant="contained" color="primary">
+                <Button component={Link} to={'/reviews/' + review.id} variant="contained" color="primary">
                 View
-              </Button>
+                </Button>
+              </div>
             </Paper>
           ))}
         </div>
