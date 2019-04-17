@@ -2,8 +2,6 @@ import apiUrl from '../../apiConfig'
 import axios from 'axios'
 
 export const showReviews = user => {
-  console.log('user data is ')
-  console.log(user)
   return axios({
     url: apiUrl + '/reviews',
     method: 'GET',
@@ -14,10 +12,6 @@ export const showReviews = user => {
 }
 
 export const showOneReview = (user, id) => {
-  console.log('showOneReview API USER is ')
-  console.log(user)
-  console.log('showOneReview API ID is ')
-  console.log(id)
   return axios({
     url: `${apiUrl}/reviews/${id}`,
     method: 'GET',
@@ -28,10 +22,6 @@ export const showOneReview = (user, id) => {
 }
 
 export const deleteReview = (user, id) => {
-  console.log('deleteReview API USER is ')
-  console.log(user)
-  console.log('deleteReview API ID is ')
-  console.log(id)
   return axios({
     url: `${apiUrl}/reviews/${id}`,
     method: 'DELETE',
@@ -49,5 +39,16 @@ export const createReview = (user, review) => {
       'Authorization': `Token token=${user.token}`
     },
     data: { review: review }
+  })
+}
+
+export const editReview = (user, id, review) => {
+  return axios({
+    url: `${apiUrl}/reviews/${id}`,
+    method: 'PATCH',
+    headers: {
+      'Authorization': `Token token=${user.token}`
+    },
+    data: { review }
   })
 }

@@ -24,13 +24,8 @@ class OneReview extends Component {
   }
 
   componentDidMount () {
-    console.log('OneTask component mounted ')
-    console.log(this.props)
-    console.log(this.state)
     const { user, snackBar } = this.props
     const id = this.props.match.params.id
-    console.log('this.props.match.params.id')
-    console.log(this.props.match.params.id)
     showOneReview(user, id)
     // sends back object with data => reviews for our listing
       .then(response => this.setState({ review: response.data.review }))
