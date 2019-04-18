@@ -19,13 +19,8 @@ class EditReview extends Component {
   }
 
   componentDidMount () {
-    console.log('OneReview component mounted ')
-    console.log(this.props)
-    console.log(this.state)
     const { user, snackBar } = this.props
     const id = this.props.match.params.id
-    console.log('this.props.match.params.id')
-    console.log(this.props.match.params.id)
     showOneReview(user, id)
     // sends back object with data => review for our listing
       .then(response => this.setState({ review: response.data.review }))

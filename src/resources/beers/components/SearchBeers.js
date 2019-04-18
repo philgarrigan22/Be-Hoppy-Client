@@ -42,29 +42,6 @@ class SearchBeers extends Component {
       })
   }
 
-  // selectBeers = (beer) => {
-  //   console.log(beer)
-  // const { alert, history } = this.props
-  //
-  // if (this.state.movies.some(film => film.name === movie.original_title)) {
-  //   const foundBeers = this.state.movies.find(film => film.name === movie.original_title)
-  //   history.push('/movies/' + foundBeers.id)
-  // } else {
-  //   const movieObj = {
-  //     name: movie.original_title,
-  //     release_date: movie.release_date,
-  //     poster: movie.poster_path }
-  //
-  //   createBeers(movieObj)
-  //     .then(res => history.push('/movies/' + res.data.movie.id))
-  //     .catch(error => {
-  //       console.error(error)
-  //       this.setState({ search: '' })
-  //       alert(messages.signUpFailure, 'danger')
-  //     })
-  // }
-  // }
-
   render () {
     const { results, search, empty } = this.state
 

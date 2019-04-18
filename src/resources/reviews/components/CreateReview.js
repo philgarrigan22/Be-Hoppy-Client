@@ -33,8 +33,6 @@ class CreateReview extends Component {
 
     handleSubmit = (event) => {
       event.preventDefault()
-      console.log('handleSubmit event')
-      console.log(this.state.review)
       const { user, snackBar } = this.props
       const { review } = this.state
       createReview(user, review)

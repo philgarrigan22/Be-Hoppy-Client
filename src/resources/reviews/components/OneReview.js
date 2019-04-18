@@ -66,7 +66,6 @@ class OneReview extends Component {
       }} />
     }
 
-    console.log('reviews component render')
     const { beer, brewery, rating, location, flavor } = this.state.review
 
     return (
