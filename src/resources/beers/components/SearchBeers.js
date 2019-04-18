@@ -58,7 +58,8 @@ class SearchBeers extends Component {
                 type='text'
                 placeholder='Enter a beers name'
                 onChange={this.handleChange} />
-              <button type='submit'>Search</button>
+              <Button type='submit' variant="contained" color="primary">Search</Button>
+              <Button component={Link} to="/reviews" variant="contained" color="secondary">Back to Reviews</Button>
             </form>
           </div>
           <Paper>
@@ -82,7 +83,8 @@ class SearchBeers extends Component {
                 type='text'
                 placeholder='Enter a beers name'
                 onChange={this.handleChange} />
-              <button type='submit'>Search</button>
+              <Button type='submit' variant="contained" color="primary">Search</Button>
+              <Button component={Link} to="/reviews" variant="contained" color="secondary">Back to Reviews</Button>
             </form>
           </div>
           <div className='found-beers row'>
@@ -105,7 +107,7 @@ class SearchBeers extends Component {
                     Type: {beer.fields.style_name}
                   </Typography>
                   <Typography component="p">
-                    Brewery Location: `{beer.fields.city}`, {beer.fields.state}
+                    Brewery Location: {beer.fields.city}, {beer.fields.state}
                   </Typography>
                   <Typography component="p">
                     Website: {beer.fields.website}
