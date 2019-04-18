@@ -37,8 +37,7 @@ class Reviews extends Component {
         }
       }
       )
-      .catch(error => {
-        console.error(error)
+      .catch(() => {
         snackBar(messages.showReviewsFailure, 'warning')
       })
   }

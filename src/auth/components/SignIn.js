@@ -27,8 +27,7 @@ class SignIn extends Component {
       .then(res => setUser(res.data.user))
       .then(() => snackBar(messages.signInSuccess, 'success'))
       .then(() => history.push('/reviews'))
-      .catch(error => {
-        console.error(error)
+      .catch(() => {
         this.setState({ email: '', password: '' })
         snackBar(messages.signInFailure, 'error')
       })

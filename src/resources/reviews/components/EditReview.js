@@ -24,8 +24,7 @@ class EditReview extends Component {
     showOneReview(user, id)
     // sends back object with data => review for our listing
       .then(response => this.setState({ review: response.data.review }))
-      .catch(error => {
-        console.error(error)
+      .catch(() => {
         snackBar(messages.showOneReviewFailure, 'warning')
       })
   }

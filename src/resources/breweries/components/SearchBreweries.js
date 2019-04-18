@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom'
 
 import { findBreweries } from '../api'
 import YelpResults from './YelpResults'
+import messages from '../messages.js'
 
 import Button from '@material-ui/core/Button'
 import Paper from '@material-ui/core/Paper'
@@ -24,7 +25,7 @@ class FindBreweries extends Component {
 
   submitSearch = event => {
     const { search } = this.state
-    const { user } = this.props
+    const { user, snackBar } = this.props
     event.preventDefault()
     findBreweries(search, user)
       .then((res) => {
@@ -34,9 +35,9 @@ class FindBreweries extends Component {
           this.setState({ search: '', empty: true })
         }
       })
-      .catch(error => {
-        console.error(error)
+      .catch(() => {
         this.setState({ search: '' })
+        snackBar(messages.submitSearchFailure, 'error')
       })
   }
 

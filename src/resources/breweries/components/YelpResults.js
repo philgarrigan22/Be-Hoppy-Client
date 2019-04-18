@@ -1,5 +1,4 @@
 import React from 'react'
-// import YelpLogo from '../../img/Yelp_trademark_RGB_outline.png'
 
 const YelpResults = ({ name, imageUrl, isClosed, url, reviewCount, rating, displayAddress, displayPhone }) => (
   <div className='yelp-card'>

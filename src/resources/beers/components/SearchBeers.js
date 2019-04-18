@@ -3,7 +3,7 @@ import { withRouter, Link } from 'react-router-dom'
 
 import { searchBeer } from '../api.js'
 
-// import messages from './messages.js'
+import messages from '../messages.js'
 
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
@@ -27,7 +27,7 @@ class SearchBeers extends Component {
   submitSearch = event => {
     event.preventDefault()
     const { search } = this.state
-    const { user } = this.props
+    const { user, snackBar } = this.props
     searchBeer(search, user)
       .then((res) => {
         if (res.data.records.length < 1) {
@@ -36,9 +36,9 @@ class SearchBeers extends Component {
           this.setState({ results: res.data.records, search: '', empty: false })
         }
       })
-      .catch(error => {
-        console.error(error)
+      .catch(() => {
         this.setState({ search: '' })
+        snackBar(messages.submitSearchFailure, 'error')
       })
   }
 

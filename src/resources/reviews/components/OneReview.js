@@ -29,8 +29,7 @@ class OneReview extends Component {
     showOneReview(user, id)
     // sends back object with data => reviews for our listing
       .then(response => this.setState({ review: response.data.review }))
-      .catch(error => {
-        console.error(error)
+      .catch(() => {
         snackBar(messages.showOneReviewFailure, 'warning')
       })
   }
@@ -44,8 +43,7 @@ class OneReview extends Component {
       // .then(() => <Redirect to="/reviews"/>)
       .then(() => this.setState({ deleted: true }))
       .then(() => snackBar(messages.deleteReviewSuccess, 'success'))
-      .catch(error => {
-        console.error(error)
+      .catch(() => {
         snackBar(messages.deleteReviewFailure, 'error')
       })
   }
