@@ -11,3 +11,14 @@ export const searchBeer = (search, user) => {
     data: { search }
   })
 }
+
+export const createReview = (user, review) => {
+  return axios({
+    url: `${apiUrl}/reviews`,
+    method: 'POST',
+    headers: {
+      'Authorization': `Token token=${user.token}`
+    },
+    data: { review: review }
+  })
+}

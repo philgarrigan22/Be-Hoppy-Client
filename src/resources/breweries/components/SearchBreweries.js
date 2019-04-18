@@ -12,6 +12,7 @@ class FindBreweries extends Component {
 
     this.state = {
       search: '',
+      empty: false,
       businesses: []
     }
   }
@@ -25,7 +26,13 @@ class FindBreweries extends Component {
     const { user } = this.props
     event.preventDefault()
     findBreweries(search, user)
-      .then(res => this.setState({ businesses: res.data.businesses, search: '' }))
+      .then((res) => {
+        if (res.data.businesses) {
+          this.setState({ businesses: res.data.businesses, search: '', empty: false })
+        } else {
+          this.setState({ search: '', empty: true })
+        }
+      })
       .catch(error => {
         console.error(error)
         this.setState({ search: '' })
@@ -35,6 +42,19 @@ class FindBreweries extends Component {
   render () {
     const { search, businesses } = this.state
 
+    // if (empty) {
+    //   return (
+    //     <Fragment>
+    //
+    //       <Paper>
+    //         <h2>Looks like that beer is not in our system. Search for another, or create a new review using your super secret beer.</h2>
+    //         <Button component={Link} to="/reviews-create" variant="contained" color="secondary">
+    //                   Create Review
+    //         </Button>
+    //       </Paper>
+    //     </Fragment>
+    //   )
+    // }
     return (
       <div className='yelp-container'>
         <form className='find-breweries-form' onSubmit={this.submitSearch}>

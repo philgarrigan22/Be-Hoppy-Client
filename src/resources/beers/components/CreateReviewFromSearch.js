@@ -1,13 +1,11 @@
 import React, { Component, Fragment } from 'react'
-import { withRouter, Redirect, Link } from 'react-router-dom'
+import { withRouter, Redirect } from 'react-router-dom'
 
-import ReviewForm from './ReviewForm'
+import SearchedReviewForm from './SearchedReviewForm'
 import { createReview } from '../api'
 import messages from '../messages'
 
-import Button from '@material-ui/core/Button'
-
-class CreateReview extends Component {
+class CreateReviewFromSearch extends Component {
   constructor () {
     super()
 
@@ -62,23 +60,27 @@ class CreateReview extends Component {
         }} />
       }
 
+      const { beerPlaceholder, breweryPlaceholder, typePlaceholder, locPlaceholder } = this.props.location.searchResults
       const { beer, brewery, rating, location, flavor } = review
       return (
         <Fragment>
-          <ReviewForm
+          <SearchedReviewForm
             beer={beer}
             brewery={brewery}
             rating={rating}
             type={this.state.review.beer_type}
             loc={location}
             flavor={flavor}
+            beerPlaceholder={beerPlaceholder}
+            breweryPlaceholder={breweryPlaceholder}
+            typePlaceholder={typePlaceholder}
+            locPlaceholder={locPlaceholder}
             handleChange={this.handleChange}
             handleSubmit={this.handleSubmit}
           />
-          <Button component={Link} to="/search-beer" variant="contained" color="secondary">Search for beer</Button>
         </Fragment>
       )
     }
 }
 
-export default withRouter(CreateReview)
+export default withRouter(CreateReviewFromSearch)

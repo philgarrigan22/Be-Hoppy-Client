@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
+import React, { Component, Fragment } from 'react'
+import { withRouter, Link } from 'react-router-dom'
 
 import { searchBeer } from '../api.js'
 
@@ -7,6 +7,7 @@ import { searchBeer } from '../api.js'
 
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
+import Button from '@material-ui/core/Button'
 
 class SearchBeers extends Component {
   constructor () {
@@ -14,18 +15,10 @@ class SearchBeers extends Component {
 
     this.state = {
       search: '',
-      // beers: [],
+      empty: false,
       results: []
     }
   }
-
-  // componentDidMount () {
-  //   getBeerss()
-  //     .then(res => this.setState({ beers: res.data.movies }))
-  //     .catch(error => {
-  //       console.error(error)
-  //     })
-  // }
 
   handleChange = event => this.setState({
     [event.target.name]: event.target.value
@@ -33,68 +26,131 @@ class SearchBeers extends Component {
 
   submitSearch = event => {
     event.preventDefault()
-    const { search, results } = this.state
+    const { search } = this.state
     const { user } = this.props
     searchBeer(search, user)
-      .then(res => this.setState({ results: results.data.records, search: '' }))
+      .then((res) => {
+        if (res.data.records.length < 1) {
+          this.setState({ search: '', empty: true })
+        } else {
+          this.setState({ results: res.data.records, search: '', empty: false })
+        }
+      })
       .catch(error => {
         console.error(error)
         this.setState({ search: '' })
       })
   }
 
-  // selectBeers = (movie) => {
-  //   const { alert, history } = this.props
+  // selectBeers = (beer) => {
+  //   console.log(beer)
+  // const { alert, history } = this.props
   //
-  //   if (this.state.movies.some(film => film.name === movie.original_title)) {
-  //     const foundBeers = this.state.movies.find(film => film.name === movie.original_title)
-  //     history.push('/movies/' + foundBeers.id)
-  //   } else {
-  //     const movieObj = {
-  //       name: movie.original_title,
-  //       release_date: movie.release_date,
-  //       poster: movie.poster_path }
+  // if (this.state.movies.some(film => film.name === movie.original_title)) {
+  //   const foundBeers = this.state.movies.find(film => film.name === movie.original_title)
+  //   history.push('/movies/' + foundBeers.id)
+  // } else {
+  //   const movieObj = {
+  //     name: movie.original_title,
+  //     release_date: movie.release_date,
+  //     poster: movie.poster_path }
   //
-  //     createBeers(movieObj)
-  //       .then(res => history.push('/movies/' + res.data.movie.id))
-  //       .catch(error => {
-  //         console.error(error)
-  //         this.setState({ search: '' })
-  //         alert(messages.signUpFailure, 'danger')
-  //       })
-  //   }
+  //   createBeers(movieObj)
+  //     .then(res => history.push('/movies/' + res.data.movie.id))
+  //     .catch(error => {
+  //       console.error(error)
+  //       this.setState({ search: '' })
+  //       alert(messages.signUpFailure, 'danger')
+  //     })
+  // }
   // }
 
   render () {
-    const { results, search } = this.state
+    const { results, search, empty } = this.state
 
-    return (
-      <div className='search-beers-container'>
-        <form className='search-beers-form' onSubmit={this.submitSearch}>
-          <h3>{'Search Beers by Name'}</h3>
-          <input
-            required
-            name='search'
-            value={search}
-            type='text'
-            placeholder='Enter a beers name'
-            onChange={this.handleChange} />
-          <button type='submit'>Search</button>
-        </form>
-        <div className='found-beers row'>
-          {results.map(beer =>
-            <div key={beer.id} className='col-3'>
-              <Paper className='beer-card'>
-                <Typography component="p">
-                Paper can be used to build surface or other elements for your application.
-                </Typography>
-                <button onClick={() => this.selectBeers(beer)}>Select</button>
-              </Paper>
-            </div>
-          )}
-        </div>
-      </div>
-    )
+    if (empty) {
+      return (
+        <Fragment>
+          <div className='search-beers-container'>
+            <form className='search-beers-form' onSubmit={this.submitSearch}>
+              <h3>{'Search Beers by Name'}</h3>
+              <input
+                required
+                name='search'
+                value={search}
+                type='text'
+                placeholder='Enter a beers name'
+                onChange={this.handleChange} />
+              <button type='submit'>Search</button>
+            </form>
+          </div>
+          <Paper>
+            <h2>Looks like that beer is not in our system. Search for another, or create a new review using your super secret beer.</h2>
+            <Button component={Link} to="/reviews-create" variant="contained" color="secondary">
+                      Create Review
+            </Button>
+          </Paper>
+        </Fragment>
+      )
+    } else {
+      return (
+        <Fragment>
+          <div className='search-beers-container'>
+            <form className='search-beers-form' onSubmit={this.submitSearch}>
+              <h3>{'Search Beers by Name'}</h3>
+              <input
+                required
+                name='search'
+                value={search}
+                type='text'
+                placeholder='Enter a beers name'
+                onChange={this.handleChange} />
+              <button type='submit'>Search</button>
+            </form>
+          </div>
+          <div className='found-beers row'>
+            {results.map(beer =>
+              <div key={beer.fields.id} className='col-3'>
+                <Paper className='beer-card'>
+                  <Typography component="p">
+                    Name: {beer.fields.name}
+                  </Typography>
+                  <Typography component="p">
+                    Brewery: {beer.fields.name_breweries}
+                  </Typography>
+                  <Typography component="p">
+                    ABV: {beer.fields.abv}
+                  </Typography>
+                  <Typography component="p">
+                    Description: {beer.fields.descript}
+                  </Typography>
+                  <Typography component="p">
+                    Type: {beer.fields.style_name}
+                  </Typography>
+                  <Typography component="p">
+                    Brewery Location: `{beer.fields.city}`, {beer.fields.state}
+                  </Typography>
+                  <Typography component="p">
+                    Website: {beer.fields.website}
+                  </Typography>
+                  <Button component={Link} to={{
+                    pathname: '/create-review-from-search',
+                    searchResults: {
+                      beerPlaceholder: beer.fields.name,
+                      breweryPlaceholder: beer.fields.name_breweries,
+                      typePlaceholder: beer.fields.style_name,
+                      locPlaceholder: beer.fields.state
+                    }
+                  }} variant="contained" color="secondary">
+                    Select
+                  </Button>
+                </Paper>
+              </div>
+            )}
+          </div>
+        </Fragment>
+      )
+    }
   }
 }
 
