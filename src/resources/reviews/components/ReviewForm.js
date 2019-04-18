@@ -14,7 +14,7 @@ const ReviewForm = (
       <input placeholder={brewery} value={brewery} name="brewery" onChange={handleChange} required />
 
       <label htmlFor="rating">Rating</label>
-      <input placeholder={rating} value={rating} name="rating" onChange={handleChange} required />
+      <input type="number" placeholder={rating} value={rating} name="rating" onChange={handleChange} required />
 
       <label htmlFor="beer_type">Type</label>
       <input placeholder={type} value={type} name="beer_type" onChange={handleChange} required />
