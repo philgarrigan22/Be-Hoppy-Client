@@ -16,6 +16,11 @@ $charcoal: #bbb;
   display: flex;
   flex-grow: 1;
   justify-content: flex-end;
+  font-family: 'Dokdo', cursive;
+}
+
+.nav-title {
+  font-family: 'Indie Flower', cursive;
 }
 
 @media (max-width: 600px) {
