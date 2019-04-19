@@ -35,7 +35,7 @@ const Header = ({ user }) => (
       <Toolbar>
         <div className="nav-title">
           <h1>
-            BE H<img className="hop-icon" src="https://i.imgur.com/19ID0Li.png"/>PPY
+            Be H<img className="hop-icon" src="https://i.imgur.com/19ID0Li.png"/>ppy
           </h1>
         </div>
         <div className="nav-btns">
