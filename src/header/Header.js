@@ -40,7 +40,7 @@ const Header = ({ user }) => (
           </Typography>
         </div>
         <div className="nav-btns">
-          { user && <span>Welcome, {user.email}</span>}
+          { user && <span></span>}
           { user ? authenticatedOptions : unauthenticatedOptions }
           { alwaysOptions }
         </div>
