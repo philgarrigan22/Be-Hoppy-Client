@@ -1,8 +1,17 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { withRouter } from 'react-router-dom'
 
 import { changePassword } from '../api'
 import messages from '../messages'
+import '../../css/auth/AuthForms.scss'
+
+import Grid from '@material-ui/core/Grid'
+import Avatar from '@material-ui/core/Avatar'
+import Button from '@material-ui/core/Button'
+import CssBaseline from '@material-ui/core/CssBaseline'
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
+import Typography from '@material-ui/core/Typography'
+import TextField from '@material-ui/core/TextField'
 
 class ChangePassword extends Component {
   constructor () {
@@ -36,29 +45,59 @@ class ChangePassword extends Component {
     const { oldPassword, newPassword } = this.state
 
     return (
-      <form className='auth-form' onSubmit={this.onChangePassword}>
-        <h3>Change Password</h3>
-
-        <label htmlFor="oldpw">Old Password</label>
-        <input
-          required
-          name="oldPassword"
-          value={oldPassword}
-          type="password"
-          placeholder="Old Password"
-          onChange={this.handleChange}
-        />
-        <label htmlFor="newPassword">New Password</label>
-        <input
-          required
-          name="newPassword"
-          value={newPassword}
-          type="password"
-          placeholder="New Password"
-          onChange={this.handleChange}
-        />
-        <button type="submit">Change Password</button>
-      </form>
+      <Fragment>
+        <div className="auth-form">
+          <CssBaseline />
+          <div className="paper">
+            <Avatar className="avatar">
+              <LockOutlinedIcon />
+            </Avatar>
+            <Typography component="h1" variant="h5">
+          Change Password
+            </Typography>
+            <form className="form" onSubmit={this.onChangePassword}>
+              <Grid container spacing={16}>
+                <Grid item xs={12}>
+                  <TextField
+                    variant="outlined"
+                    required
+                    fullWidth
+                    id="oldPassword"
+                    label="Old Password"
+                    name="oldPassword"
+                    value={oldPassword}
+                    type="password"
+                    onChange={this.handleChange}
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    variant="outlined"
+                    required
+                    fullWidth
+                    id="password"
+                    label="New Password"
+                    name="newPassword"
+                    value={newPassword}
+                    type="password"
+                    onChange={this.handleChange}
+                  />
+                </Grid>
+              </Grid>
+              <div className="auth-btn-submit">
+                <Button
+                  type="submit"
+                  fullWidth
+                  variant="contained"
+                  color="primary"
+                >
+                Change Password
+                </Button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </Fragment>
     )
   }
 }
