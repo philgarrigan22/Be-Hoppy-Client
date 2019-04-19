@@ -1,11 +1,9 @@
 import React, { Component, Fragment } from 'react'
-import { withRouter, Redirect, Link } from 'react-router-dom'
+import { withRouter, Redirect } from 'react-router-dom'
 
 import ReviewForm from './ReviewForm'
 import { createReview } from '../api'
 import messages from '../messages'
-
-import Button from '@material-ui/core/Button'
 
 class CreateReview extends Component {
   constructor () {
@@ -73,7 +71,6 @@ class CreateReview extends Component {
             handleChange={this.handleChange}
             handleSubmit={this.handleSubmit}
           />
-          <Button component={Link} to="/search-beer" variant="contained" color="secondary">Search for beer</Button>
         </Fragment>
       )
     }
