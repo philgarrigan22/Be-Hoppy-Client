@@ -50,16 +50,3 @@ const Header = ({ user }) => (
 )
 
 export default Header
-
-// <header className="main-header">
-//   <div className="nav-title">
-//     <Typography variant="h3" color="inherit">
-//           Be Hoppy
-//     </Typography>
-//   </div>
-//   <div className="nav-btns">
-//     { user && <span>Welcome, {user.email}</span>}
-//     { user ? authenticatedOptions : unauthenticatedOptions }
-//     { alwaysOptions }
-//   </div>
-// </header>
