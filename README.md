@@ -74,4 +74,4 @@ Stretch goal user stories:
 * As a signed in user, I would like to search for a specific brewery.
 * As a signed in user, I would like to search for and add the location of where I tried / bought a beer that I review.
 
-![Screenshot of Be Hoppy](https://i.imgur.com/Awd89hX.png)
+![Screenshot of Be Hoppy](https://i.imgur.com/uBbhz9J.png)
