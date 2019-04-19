@@ -4,9 +4,14 @@ import { withRouter } from 'react-router-dom'
 import { findBreweries } from '../api'
 import YelpResults from './YelpResults'
 import messages from '../messages.js'
+import '../../../css/breweries/Breweries.scss'
 
 import Button from '@material-ui/core/Button'
 import Paper from '@material-ui/core/Paper'
+import Typography from '@material-ui/core/Typography'
+import TextField from '@material-ui/core/TextField'
+import Grid from '@material-ui/core/Grid'
+import CssBaseline from '@material-ui/core/CssBaseline'
 
 class FindBreweries extends Component {
   constructor () {
@@ -68,17 +73,34 @@ class FindBreweries extends Component {
     } else {
       return (
         <div className='yelp-container'>
-          <form className='find-breweries-form' onSubmit={this.submitSearch}>
-            <h3>Go out and visit your local breweries!</h3>
-            <input
-              required
-              name='search'
-              value={search}
-              type='text'
-              placeholder='Where you at?'
-              onChange={this.handleChange} />
-            <Button type="submit" variant="contained" color="primary">Search</Button>
-          </form>
+          <CssBaseline />
+          <div className="paper">
+            <Typography component="h1" variant="h5">
+            Go out and visit your local breweries!
+            </Typography>
+
+            <form className='find-breweries-form' onSubmit={this.submitSearch}>
+              <Grid container spacing={16}>
+                <Grid item xs={12}>
+                  <TextField
+                    variant="outlined"
+                    type="text"
+                    required
+                    fullWidth
+                    id="search"
+                    label="Where you drinkin?"
+                    name="search"
+                    value={search}
+                    onChange={this.handleChange}
+                  />
+                </Grid>
+              </Grid>
+              <div className="search-btn-submit">
+                <Button type="submit" variant="contained" color="primary" fullWidth>Search</Button>
+              </div>
+            </form>
+          </div>
+
           <div className='returned-breweries'>
             {businesses.map(brewery =>
               <YelpResults key={brewery.id}
