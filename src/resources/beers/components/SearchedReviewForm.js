@@ -48,7 +48,7 @@ const SearchedReviewForm = (
             required
             fullWidth
             id="rating"
-            label={rating}
+            label="Rating"
             name="rating"
             value={rating}
             type="number"
@@ -87,7 +87,7 @@ const SearchedReviewForm = (
             required
             fullWidth
             id="flavor"
-            label={flavor}
+            label="Flavor"
             name="flavor"
             value={flavor}
             type="text"
