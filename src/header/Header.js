@@ -5,6 +5,8 @@ import '../css/header/Header.scss'
 
 import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
+import AppBar from '@material-ui/core/AppBar'
+import Toolbar from '@material-ui/core/Toolbar'
 
 const authenticatedOptions = (
   <React.Fragment>
@@ -29,20 +31,35 @@ const alwaysOptions = (
 )
 
 const Header = ({ user }) => (
-  <header>
-    <div className="main-header">
-      <div className="nav-title">
-        <Typography variant="h3" color="inherit">
+  <div>
+    <AppBar position="static" color="primary">
+      <Toolbar>
+        <div className="nav-title">
+          <Typography variant="h3" color="inherit">
             Be Hoppy
-        </Typography>
-      </div>
-      <div className="nav-btns">
-        { user && <span>Welcome, {user.email}</span>}
-        { user ? authenticatedOptions : unauthenticatedOptions }
-        { alwaysOptions }
-      </div>
-    </div>
-  </header>
+          </Typography>
+        </div>
+        <div className="nav-btns">
+          { user && <span>Welcome, {user.email}</span>}
+          { user ? authenticatedOptions : unauthenticatedOptions }
+          { alwaysOptions }
+        </div>
+      </Toolbar>
+    </AppBar>
+  </div>
 )
 
 export default Header
+
+// <header className="main-header">
+//   <div className="nav-title">
+//     <Typography variant="h3" color="inherit">
+//           Be Hoppy
+//     </Typography>
+//   </div>
+//   <div className="nav-btns">
+//     { user && <span>Welcome, {user.email}</span>}
+//     { user ? authenticatedOptions : unauthenticatedOptions }
+//     { alwaysOptions }
+//   </div>
+// </header>
