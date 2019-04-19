@@ -1,8 +1,17 @@
-import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
+import React, { Component, Fragment } from 'react'
+import { withRouter, Link } from 'react-router-dom'
 
 import { signIn } from '../api'
 import messages from '../messages'
+import '../../css/auth/AuthForms.scss'
+
+import Grid from '@material-ui/core/Grid'
+import Avatar from '@material-ui/core/Avatar'
+import Button from '@material-ui/core/Button'
+import CssBaseline from '@material-ui/core/CssBaseline'
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
+import Typography from '@material-ui/core/Typography'
+import TextField from '@material-ui/core/TextField'
 
 class SignIn extends Component {
   constructor () {
@@ -37,28 +46,66 @@ class SignIn extends Component {
     const { email, password } = this.state
 
     return (
-      <form className='auth-form' onSubmit={this.onSignIn}>
-        <h3>Sign In</h3>
-        <label htmlFor="email">Email</label>
-        <input
-          required
-          type="email"
-          name="email"
-          value={email}
-          placeholder="Email"
-          onChange={this.handleChange}
-        />
-        <label htmlFor="password">Password</label>
-        <input
-          required
-          name="password"
-          value={password}
-          type="password"
-          placeholder="Password"
-          onChange={this.handleChange}
-        />
-        <button type="submit">Sign In</button>
-      </form>
+      <Fragment>
+        <div className="auth-form">
+          <CssBaseline />
+          <div className="paper">
+            <Avatar className="avatar">
+              <LockOutlinedIcon />
+            </Avatar>
+            <Typography component="h1" variant="h5">
+          Sign In
+            </Typography>
+            <form className="form" onSubmit={this.onSignIn}>
+              <Grid container spacing={16}>
+                <Grid item xs={12}>
+                  <TextField
+                    variant="outlined"
+                    type="email"
+                    required
+                    fullWidth
+                    id="email"
+                    label="Email Address"
+                    name="email"
+                    value={email}
+                    onChange={this.handleChange}
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    variant="outlined"
+                    required
+                    fullWidth
+                    id="password"
+                    label="Password"
+                    name="password"
+                    value={password}
+                    type="password"
+                    onChange={this.handleChange}
+                  />
+                </Grid>
+              </Grid>
+              <div className="auth-btn-submit">
+                <Button
+                  type="submit"
+                  fullWidth
+                  variant="contained"
+                  color="primary"
+                >
+                Sign In
+                </Button>
+              </div>
+              <Grid container justify="flex-end">
+                <Grid item>
+                  <Link to="/sign-up" variant="body2">
+                  No account? Sign up
+                  </Link>
+                </Grid>
+              </Grid>
+            </form>
+          </div>
+        </div>
+      </Fragment>
     )
   }
 }
