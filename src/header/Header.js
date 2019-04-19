@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import '../css/header/Header.scss'
 
 import Button from '@material-ui/core/Button'
-import Typography from '@material-ui/core/Typography'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 
@@ -35,9 +34,9 @@ const Header = ({ user }) => (
     <AppBar position="static" color="primary">
       <Toolbar>
         <div className="nav-title">
-          <Typography variant="h3" color="inherit">
-            Be Hoppy
-          </Typography>
+          <h1>
+            Be H<img className="hop-icon" src="https://i.imgur.com/19ID0Li.png"/>ppy
+          </h1>
         </div>
         <div className="nav-btns">
           { user && <span></span>}
