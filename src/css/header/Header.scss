@@ -2,19 +2,13 @@ $charcoal: #bbb;
 
 .main-header {
   align-items: center;
-  border-bottom: 1px solid $charcoal;
   display: flex;
-  height: 100px;
-  padding: 0 20px;
-
-  a,
-  span {
-    font-size: 1.2em;
-    margin: 0 15px;
-  }
+  height: 80px;
+  box-shadow: 0 5px 25px black;
+  border: 0 2rem;
 }
 
-.main-header > nav {
+.nav-btns {
   align-items: center;
   display: flex;
   flex-grow: 1;
@@ -27,10 +21,6 @@ $charcoal: #bbb;
     font-size: 0.7em;
     height: auto;
     padding: 10px;
-
-    h1 {
-      font-size: 2.5em;
-    }
   }
 }
 
