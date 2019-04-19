@@ -6,7 +6,6 @@ import messages from '../messages'
 
 import '../../../css/reviews/Review.scss'
 import LinearProgress from '@material-ui/core/LinearProgress'
-import Fab from '@material-ui/core/Fab'
 import AddIcon from '@material-ui/icons/Add'
 import Button from '@material-ui/core/Button'
 import Paper from '@material-ui/core/Paper'
@@ -68,10 +67,10 @@ class Reviews extends Component {
     return (
       <Fragment>
         <div>
-          <h1>Reviews</h1>
-          <Fab component={Link} to="/reviews-create" color="primary" aria-label="Add">
-            <AddIcon />
-          </Fab>
+          <h1 className="my-reviews-header" >Reviews</h1>
+          <Button component={Link} to="/reviews-create" color="secondary" variant="contained">
+            Create New Review
+          </Button>
         </div>
         <div>
           {reviews.map(review => (
