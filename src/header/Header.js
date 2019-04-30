@@ -94,7 +94,7 @@ class Header extends Component {
         </div>
         <Divider />
         <List component="nav">
-          <ListItem button component={Link} to="/">
+          <ListItem className="side-nav-btns" button component={Link} to="/">
             <ListItemIcon>
               <img className="side-icon" src="https://i.imgur.com/II9qvVa.png"/>
             </ListItemIcon>
@@ -145,7 +145,7 @@ class Header extends Component {
         </div>
         <Divider />
         <List component="nav">
-          <ListItem button component={Link} to="/">
+          <ListItem className="side-nav-btns" button component={Link} to="/">
             <ListItemIcon>
               <img className="side-icon" src="https://i.imgur.com/II9qvVa.png"/>
             </ListItemIcon>

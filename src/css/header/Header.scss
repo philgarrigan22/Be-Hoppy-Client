@@ -1,13 +1,17 @@
 $charcoal: #bbb;
 
+h1 {
+  margin: .5rem;
+}
+
 .main-header {
   align-items: center;
   display: flex;
-  height: 80px;
+  height: 70px;
 }
 
 .hop-icon {
-  height: 29px;
+  height: 33px;
 }
 
 .side-icon {
@@ -27,10 +31,13 @@ $charcoal: #bbb;
   display: flex;
   flex-grow: 1;
   justify-content: flex-end;
+  font-size: 1.5rem;
 }
 
 .side-nav-title {
   font-family: 'Indie Flower', cursive;
+  display: flex;
+  padding-left: .5rem;
 }
 
 @media (max-width: 600px) {
@@ -45,5 +52,11 @@ $charcoal: #bbb;
     flex-direction: column;
     width: 100%;
 
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-title {
+    font-size: 1rem;
   }
 }
