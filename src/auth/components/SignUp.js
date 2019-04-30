@@ -9,9 +9,9 @@ import Grid from '@material-ui/core/Grid'
 import Avatar from '@material-ui/core/Avatar'
 import Button from '@material-ui/core/Button'
 import CssBaseline from '@material-ui/core/CssBaseline'
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import Typography from '@material-ui/core/Typography'
 import TextField from '@material-ui/core/TextField'
+import Paper from '@material-ui/core/Paper'
 
 class SignUp extends Component {
   constructor () {
@@ -50,76 +50,78 @@ class SignUp extends Component {
     return (
       <Fragment>
         <div className="auth-form">
-          <CssBaseline />
-          <div className="paper">
-            <Avatar className="avatar">
-              <LockOutlinedIcon />
-            </Avatar>
-            <Typography component="h1" variant="h5">
+          <Paper>
+            <CssBaseline />
+            <div className="auth-style">
+              <Avatar className="avatar">
+                <img className="side-icon" src="https://i.imgur.com/oenX8nb.png"/>
+              </Avatar>
+              <Typography component="h1" variant="h5">
           Sign up
-            </Typography>
-            <form className="form" onSubmit={this.onSignUp}>
-              <Grid container spacing={16}>
-                <Grid item xs={12}>
-                  <TextField
-                    variant="outlined"
-                    type="email"
-                    required
-                    fullWidth
-                    id="email"
-                    label="Email Address"
-                    name="email"
-                    value={email}
-                    onChange={this.handleChange}
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <TextField
-                    variant="outlined"
-                    required
-                    fullWidth
-                    id="password"
-                    label="Password"
-                    name="password"
-                    value={password}
-                    type="password"
-                    onChange={this.handleChange}
-                  />
-                </Grid>
+              </Typography>
+              <form className="form" onSubmit={this.onSignUp}>
+                <Grid container spacing={16}>
+                  <Grid item xs={12}>
+                    <TextField
+                      variant="outlined"
+                      type="email"
+                      required
+                      fullWidth
+                      id="email"
+                      label="Email Address"
+                      name="email"
+                      value={email}
+                      onChange={this.handleChange}
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <TextField
+                      variant="outlined"
+                      required
+                      fullWidth
+                      id="password"
+                      label="Password"
+                      name="password"
+                      value={password}
+                      type="password"
+                      onChange={this.handleChange}
+                    />
+                  </Grid>
 
-                <Grid item xs={12}>
-                  <TextField
-                    variant="outlined"
-                    required
+                  <Grid item xs={12}>
+                    <TextField
+                      variant="outlined"
+                      required
+                      fullWidth
+                      name="passwordConfirmation"
+                      label="Password Confirmation"
+                      type="password"
+                      id="passwordConfirmation"
+                      value={passwordConfirmation}
+                      onChange={this.handleChange}
+                    />
+                  </Grid>
+                </Grid>
+                <div className="auth-btn-submit">
+                  <Button
+                    type="submit"
                     fullWidth
-                    name="passwordConfirmation"
-                    label="Password Confirmation"
-                    type="password"
-                    id="passwordConfirmation"
-                    value={passwordConfirmation}
-                    onChange={this.handleChange}
-                  />
-                </Grid>
-              </Grid>
-              <div className="auth-btn-submit">
-                <Button
-                  type="submit"
-                  fullWidth
-                  variant="contained"
-                  color="primary"
-                >
+                    variant="contained"
+                    color="primary"
+                  >
                 Sign Up
-                </Button>
-              </div>
-              <Grid container justify="flex-end">
-                <Grid item>
-                  <Link to="/sign-in" variant="body2">
+                  </Button>
+                </div>
+                <Grid container justify="flex-end">
+                  <Grid item>
+                    <Link to="/sign-in" variant="body2">
                   Already have an account? Sign in
-                  </Link>
+                    </Link>
+                  </Grid>
                 </Grid>
-              </Grid>
-            </form>
-          </div>
+              </form>
+            </div>
+          </Paper>
         </div>
       </Fragment>
     )
