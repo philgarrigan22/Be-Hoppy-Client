@@ -87,7 +87,7 @@ class Header extends Component {
 
     const authenticatedSideOptions = (
       <div className={classes.list}>
-        <div className="nav-title">
+        <div className="side-nav-title">
           <h1>
         Be H<img className="side-icon" src="https://i.imgur.com/19ID0Li.png"/>ppy
           </h1>
@@ -138,7 +138,7 @@ class Header extends Component {
     )
     const unauthenticatedSideOptions = (
       <div className={classes.list}>
-        <div className="nav-title">
+        <div className="side-nav-title">
           <h1>
           Be H<img className="side-icon" src="https://i.imgur.com/19ID0Li.png"/>ppy
           </h1>
@@ -171,15 +171,17 @@ class Header extends Component {
     )
 
     return (
-      <div>
+      <div className="main-header">
         <AppBar position="static" color="primary">
           <Toolbar>
-            <IconButton
-              color="inherit"
-              aria-label="Open drawer"
-              onClick={this.toggleDrawer(true)}
-            >  <MenuIcon />
-            </IconButton>
+            <div className="side-nav-toggle">
+              <IconButton
+                color="inherit"
+                aria-label="Open drawer"
+                onClick={this.toggleDrawer(true)}
+              >  <MenuIcon />
+              </IconButton>
+            </div>
             <Drawer open={this.state.open} onClose={this.toggleDrawer(false)}>
               <div
                 tabIndex={0}
