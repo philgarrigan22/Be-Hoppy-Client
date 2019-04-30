@@ -12,16 +12,3 @@ body {
   margin: 2rem auto;
   width: 80%;
 }
-
-.auth-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 3rem auto 0;
-  max-width: 600px;
-
-  button {
-    align-self: flex-end;
-    max-width: 200px;
-  }
-}
