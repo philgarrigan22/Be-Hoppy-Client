@@ -14,27 +14,25 @@ import Divider from '@material-ui/core/Divider'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
-import InboxIcon from '@material-ui/icons/MoveToInbox'
-import MailIcon from '@material-ui/icons/Mail'
 import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from '@material-ui/icons/Menu'
 import Drawer from '@material-ui/core/Drawer'
 
-const authenticatedOptions = (
-  <React.Fragment>
-    <Button color="inherit" component={Link} to="/reviews">Reviews</Button>
-    <Button color="inherit" component={Link} to="/yelp-search">Find Breweries</Button>
-    <Button color="inherit" component={Link} to="/change-password">Change Password</Button>
-    <Button color="inherit" component={Link} to="/sign-out">Sign Out</Button>
-  </React.Fragment>
-)
-
-const unauthenticatedOptions = (
-  <React.Fragment>
-    <Button color="inherit" component={Link} to="/sign-up">Sign Up</Button>
-    <Button color="inherit" component={Link} to="/sign-in">Sign In</Button>
-  </React.Fragment>
-)
+// const authenticatedOptions = (
+//   <React.Fragment>
+//     <Button color="inherit" component={Link} to="/reviews">Reviews</Button>
+//     <Button color="inherit" component={Link} to="/yelp-search">Find Breweries</Button>
+//     <Button color="inherit" component={Link} to="/change-password">Change Password</Button>
+//     <Button color="inherit" component={Link} to="/sign-out">Sign Out</Button>
+//   </React.Fragment>
+// )
+//
+// const unauthenticatedOptions = (
+//   <React.Fragment>
+//     <Button color="inherit" component={Link} to="/sign-up">Sign Up</Button>
+//     <Button color="inherit" component={Link} to="/sign-in">Sign In</Button>
+//   </React.Fragment>
+// )
 
 const alwaysOptions = (
   <React.Fragment>
@@ -89,25 +87,49 @@ class Header extends Component {
 
     const authenticatedSideOptions = (
       <div className={classes.list}>
+        <div className="nav-title">
+          <h1>
+        Be H<img className="side-icon" src="https://i.imgur.com/19ID0Li.png"/>ppy
+          </h1>
+        </div>
+        <Divider />
         <List component="nav">
           <ListItem button component={Link} to="/">
             <ListItemIcon>
-              <MailIcon />
+              <img className="side-icon" src="https://i.imgur.com/II9qvVa.png"/>
             </ListItemIcon>
             <ListItemText primary="Home" />
+          </ListItem>
+          <ListItem button component={Link} to="/reviews">
+            <ListItemIcon>
+              <img className="side-icon" src="https://i.imgur.com/PA9taVa.png"/>
+            </ListItemIcon>
+            <ListItemText primary="My Reviews" />
+          </ListItem>
+          <ListItem button component={Link} to="/search-beer">
+            <ListItemIcon>
+              <img className="side-icon" src="https://i.imgur.com/CsFbdcX.png"/>
+            </ListItemIcon>
+            <ListItemText primary="Search Beers" />
+          </ListItem>
+          <ListItem button component={Link} to="/yelp-search">
+            <ListItemIcon>
+              <img className="side-icon" src="https://i.imgur.com/un1f1ra.png"/>
+            </ListItemIcon>
+            <ListItemText primary="Find Breweries" />
           </ListItem>
         </List>
         <Divider />
         <List>
           <ListItem button component={Link} to="/change-password">
             <ListItemIcon>
-              <MailIcon />
+              <img className="side-icon" src="https://i.imgur.com/YCZQu9I.png"/>
             </ListItemIcon>
             <ListItemText primary="Change Password" />
           </ListItem>
           <ListItem button component={Link} to="/sign-out">
             <ListItemIcon>
-              <MailIcon />
+              <img className="side-icon" src="https://i.imgur.com/yRe546e.png"/>
             </ListItemIcon>
             <ListItemText primary="Sign Out" />
           </ListItem>
@@ -116,10 +138,16 @@ class Header extends Component {
     )
     const unauthenticatedSideOptions = (
       <div className={classes.list}>
+        <div className="nav-title">
+          <h1>
+          Be H<img className="side-icon" src="https://i.imgur.com/19ID0Li.png"/>ppy
+          </h1>
+        </div>
+        <Divider />
         <List component="nav">
           <ListItem button component={Link} to="/">
             <ListItemIcon>
-              <MailIcon />
+              <img className="side-icon" src="https://i.imgur.com/II9qvVa.png"/>
             </ListItemIcon>
             <ListItemText primary="Home" />
           </ListItem>
@@ -128,13 +156,13 @@ class Header extends Component {
         <List component="nav">
           <ListItem button component={Link} to="/sign-in">
             <ListItemIcon>
-              <MailIcon />
+              <img className="side-icon" src="https://i.imgur.com/1ItMBfx.png"/>
             </ListItemIcon>
             <ListItemText primary="Sign In" />
           </ListItem>
           <ListItem button component={Link} to="/sign-up">
             <ListItemIcon>
-              <InboxIcon />
+              <img className="side-icon" src="https://i.imgur.com/oenX8nb.png"/>
             </ListItemIcon>
             <ListItemText primary="Sign Up" />
           </ListItem>
@@ -168,7 +196,7 @@ class Header extends Component {
               </h1>
             </div>
             <div className="nav-btns">
-              { this.props.user ? authenticatedOptions : unauthenticatedOptions }
+              {/* { this.props.user ? authenticatedOptions : unauthenticatedOptions } */}
               { alwaysOptions }
             </div>
           </Toolbar>
