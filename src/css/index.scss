@@ -2,6 +2,11 @@ body {
   font-family: 'Exo', sans-serif;
   margin: 0;
   padding: 0;
+  // Background image
+  background-image: url('https://i.imgur.com/ez989Bo.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .alert {
