@@ -69,7 +69,7 @@ class CreateReviewFromSearch extends Component {
 
       if (created) {
         return <Redirect to={{
-          pathname: `/reviews/${review.id}`
+          pathname: '/reviews'
         }} />
       }
 
