@@ -87,9 +87,25 @@ class Reviews extends Component {
       <Fragment>
         <div>
           <h1 className="my-reviews-header" >Reviews</h1>
-          <Button component={Link} to="/reviews-create" color="secondary" variant="contained">
+          <Grid
+            container
+            direction="row"
+            justify="center"
+            alignItems="center"
+          >
+            <Grid item xs={12} sm={5}>
+              <div className="review-btn-submit">
+                <Button component={Link} to="/reviews-create" color="secondary" variant="contained" fullWidth>
             Create New Review
-          </Button>
+                </Button>
+              </div>
+            </Grid>
+            <Grid item xs={12} sm={5}>
+              <div className="review-btn-submit">
+                <Button component={Link} to="/search-beer" variant="contained" color="primary" fullWidth>Search for beer</Button>
+              </div>
+            </Grid>
+          </Grid>
         </div>
         <div>
           {reviews.map(review => (
