@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Home = () => (
+const Home = ({ snackBar, user }) => (
   <div className='home'>
-    <h1>Hi</h1>
-    <div className="home-img">
+
+    <div>
 
     </div>
   </div>
