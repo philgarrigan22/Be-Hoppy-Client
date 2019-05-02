@@ -1,13 +1,12 @@
 $charcoal: #bbb;
 
 h1 {
-  margin: 1rem;
+  margin: .5rem;
 }
 
 .main-header {
   align-items: center;
   display: flex;
-  height: 80px;
 }
 
 .hop-icon {
@@ -31,7 +30,7 @@ h1 {
   display: flex;
   flex-grow: 1;
   justify-content: flex-end;
-  font-size: 1.3rem;
+  font-size: 1rem;
 }
 
 .side-nav-title {
