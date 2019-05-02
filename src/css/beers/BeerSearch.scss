@@ -1,5 +1,14 @@
 .beer-card {
-  margin-bottom: 2rem;
+  margin: 2rem 0;
+}
+
+.beer-card-inner {
+  border-bottom: 1px solid #000;
+  padding-bottom: 2rem;
+}
+
+.select-beer-btn {
+  margin: 1rem 1rem 0 0;
 }
 
 .beer-search-header {
@@ -29,6 +38,14 @@
   padding: 1rem;
   margin: 1rem;
   text-align: center;
+}
+
+.found-beers-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 3rem auto 3rem;
+  max-width: 1100px;
 }
 
 .find-breweries-form {

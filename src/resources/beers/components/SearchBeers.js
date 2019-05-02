@@ -6,7 +6,6 @@ import messages from '../messages.js'
 import '../../../css/beers/BeerSearch.scss'
 
 import Paper from '@material-ui/core/Paper'
-import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField'
 import Grid from '@material-ui/core/Grid'
@@ -188,46 +187,49 @@ class SearchBeers extends Component {
             </Paper>
           </div>
 
-          <div className='found-beers row'>
-            {results.map(beer =>
-              <div key={beer.fields.id} className='beer-card'>
-                <Paper>
-                  <Typography component="p">
-                    Name: {beer.fields.name}
-                  </Typography>
-                  <Typography component="p">
-                    Brewery: {beer.fields.name_breweries}
-                  </Typography>
-                  <Typography component="p">
-                    ABV: {beer.fields.abv}
-                  </Typography>
-                  <Typography component="p">
-                    Description: {beer.fields.descript}
-                  </Typography>
-                  <Typography component="p">
-                    Type: {beer.fields.style_name}
-                  </Typography>
-                  <Typography component="p">
-                    Brewery Location: {beer.fields.city}, {beer.fields.state}
-                  </Typography>
-                  <Typography component="p">
-                    Website: {beer.fields.website}
-                  </Typography>
-                </Paper>
-                <Button fullWidth component={Link} to={{
-                  pathname: '/create-review-from-search',
-                  searchResults: {
-                    beerPlaceholder: beer.fields.name,
-                    breweryPlaceholder: beer.fields.name_breweries,
-                    typePlaceholder: beer.fields.style_name,
-                    locPlaceholder: beer.fields.state
-                  }
-                }} variant="contained" color="secondary">
-                  Select
-                </Button>
+          <div className='found-beers-container'>
+            <Paper>
+              {results.map(beer =>
+                <div key={beer.fields.id} className='beer-card'>
+                  <Grid container
+                    direction="row"
+                    justify="center"
+                    alignItems="center">
+                    <Grid item xs={11} className="beer-card-inner">
+                      <h2>{beer.fields.name}</h2>
+                      <h3>{beer.fields.name_breweries}</h3>
+                      <p>{beer.fields.descript}</p>
+                      <p>Type: {beer.fields.style_name}</p>
+                      <p>ABV: {beer.fields.abv}</p>
+                      <p>Brewery Location: {beer.fields.city}, {beer.fields.state}</p>
+                      <p>Website: {beer.fields.website}</p>
+                      <Grid container
+                        direction="row"
+                        justify="center"
+                        alignItems="center"
+                      >
+                        <Grid item xs={10} sm={4}>
+                          <div className="select-beer-btn">
+                            <Button fullWidth component={Link} to={{
+                              pathname: '/create-review-from-search',
+                              searchResults: {
+                                beerPlaceholder: beer.fields.name,
+                                breweryPlaceholder: beer.fields.name_breweries,
+                                typePlaceholder: beer.fields.style_name,
+                                locPlaceholder: beer.fields.state
+                              }
+                            }} variant="contained" color="primary">
+                          Create New Review
+                            </Button>
+                          </div>
+                        </Grid>
+                      </Grid>
+                    </Grid>
+                  </Grid>
+                </div>
 
-              </div>
-            )}
+              )}
+            </Paper>
           </div>
         </div>
       )
