@@ -9,9 +9,9 @@ import Grid from '@material-ui/core/Grid'
 import Avatar from '@material-ui/core/Avatar'
 import Button from '@material-ui/core/Button'
 import CssBaseline from '@material-ui/core/CssBaseline'
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import Typography from '@material-ui/core/Typography'
 import TextField from '@material-ui/core/TextField'
+import Paper from '@material-ui/core/Paper'
 
 class ChangePassword extends Component {
   constructor () {
@@ -47,55 +47,57 @@ class ChangePassword extends Component {
     return (
       <Fragment>
         <div className="auth-form">
-          <CssBaseline />
-          <div className="paper">
-            <Avatar className="avatar">
-              <LockOutlinedIcon />
-            </Avatar>
-            <Typography component="h1" variant="h5">
-          Change Password
-            </Typography>
-            <form className="form" onSubmit={this.onChangePassword}>
-              <Grid container spacing={16}>
-                <Grid item xs={12}>
-                  <TextField
-                    variant="outlined"
-                    required
-                    fullWidth
-                    id="oldPassword"
-                    label="Old Password"
-                    name="oldPassword"
-                    value={oldPassword}
-                    type="password"
-                    onChange={this.handleChange}
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <TextField
-                    variant="outlined"
-                    required
-                    fullWidth
-                    id="password"
-                    label="New Password"
-                    name="newPassword"
-                    value={newPassword}
-                    type="password"
-                    onChange={this.handleChange}
-                  />
-                </Grid>
-              </Grid>
-              <div className="auth-btn-submit">
-                <Button
-                  type="submit"
-                  fullWidth
-                  variant="contained"
-                  color="primary"
-                >
+          <Paper>
+            <CssBaseline />
+            <div className="auth-style">
+              <Avatar className="avatar">
+                <img className="side-icon" src="https://i.imgur.com/YCZQu9I.png"/>
+              </Avatar>
+              <Typography component="h1" variant="h5">
                 Change Password
-                </Button>
-              </div>
-            </form>
-          </div>
+              </Typography>
+              <form className="form" onSubmit={this.onChangePassword}>
+                <Grid container spacing={16}>
+                  <Grid item xs={12}>
+                    <TextField
+                      variant="outlined"
+                      required
+                      fullWidth
+                      id="oldPassword"
+                      label="Old Password"
+                      name="oldPassword"
+                      value={oldPassword}
+                      type="password"
+                      onChange={this.handleChange}
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <TextField
+                      variant="outlined"
+                      required
+                      fullWidth
+                      id="password"
+                      label="New Password"
+                      name="newPassword"
+                      value={newPassword}
+                      type="password"
+                      onChange={this.handleChange}
+                    />
+                  </Grid>
+                </Grid>
+                <div className="auth-btn-submit">
+                  <Button
+                    type="submit"
+                    fullWidth
+                    variant="contained"
+                    color="primary"
+                  >
+                    Change Password
+                  </Button>
+                </div>
+              </form>
+            </div>
+          </Paper>
         </div>
       </Fragment>
     )
