@@ -1,7 +1,25 @@
 body {
   font-family: 'Exo', sans-serif;
+  margin: 0;
+  padding: 0;
+  // Background image
+  background-attachment: fixed;
+  background-image: url('../imgs/BarBackground.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .alert {
   margin: 30px;
+}
+
+.main-content {
+  margin: 2rem auto;
+  width: 80%;
+}
+
+@media (max-width: 768px) {
+  body {
+    background-position: bottom;
+  }
 }

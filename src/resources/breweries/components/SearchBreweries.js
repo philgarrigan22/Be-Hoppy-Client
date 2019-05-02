@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 
 import { findBreweries } from '../api'
@@ -8,7 +8,6 @@ import '../../../css/breweries/Breweries.scss'
 
 import Button from '@material-ui/core/Button'
 import Paper from '@material-ui/core/Paper'
-import Typography from '@material-ui/core/Typography'
 import TextField from '@material-ui/core/TextField'
 import Grid from '@material-ui/core/Grid'
 import CssBaseline from '@material-ui/core/CssBaseline'
@@ -51,54 +50,140 @@ class FindBreweries extends Component {
 
     if (empty) {
       return (
-        <Fragment>
-          <div className='yelp-container'>
-            <form className='find-breweries-form' onSubmit={this.submitSearch}>
-              <h3>Go out and visit your local breweries!</h3>
-              <input
-                required
-                name='search'
-                value={search}
-                type='text'
-                placeholder='Where you at?'
-                onChange={this.handleChange} />
-              <Button type="submit" variant="contained" color="primary">Search</Button>
-            </form>
+        <div>
+          <Grid
+            container
+            direction="row"
+            justify="center"
+            alignItems="center"
+          >
+            <Grid item xs={10} sm={10}>
+              <div className="brewery-search-header">
+                <h1>Go out and visit your local breweries!</h1>
+              </div>
+            </Grid>
+          </Grid>
+          <div className='find-breweries-container'>
             <Paper>
-              <h2>We are unable to pull up breweries in your area. Try searching in another area.</h2>
+              <CssBaseline />
+              <div className="find-breweries-form">
+                <Grid
+                  container
+                  direction="row"
+                  justify="center"
+                  alignItems="center"
+                >
+                  <Grid item xs={10} sm={5}>
+                    <div className="brewery-search-form-header">
+                      <h2>Search Breweries by Location</h2>
+                    </div>
+                  </Grid>
+                </Grid>
+
+                <form onSubmit={this.submitSearch}>
+                  <Grid className="form-input" container spacing={24}>
+                    <Grid item xs={12}>
+                      <TextField
+                        variant="outlined"
+                        required
+                        fullWidth
+                        name='search'
+                        value={search}
+                        type='text'
+                        placeholder='Where you at?'
+                        onChange={this.handleChange} />
+                    </Grid>
+                  </Grid>
+
+                  <Grid
+                    container
+                    direction="row"
+                    justify="center"
+                    alignItems="center"
+                  >
+                    <Grid item xs={10} sm={4}>
+                      <div className="search-btn-submit">
+                        <Button type="submit" variant="contained" color="primary" fullWidth>Search</Button>
+                      </div>
+                    </Grid>
+                  </Grid>
+                </form>
+              </div>
             </Paper>
+            <div className="empty-results-container">
+              <Paper>
+                <CssBaseline />
+                <div className="empty-results">
+                  <h3>We are unable to pull up breweries in the selected area. Try searching in another area.</h3 >
+                </div>
+              </Paper>
+            </div>
           </div>
-        </Fragment>
+        </div>
       )
     } else {
       return (
-        <div className='yelp-container'>
-          <CssBaseline />
-          <div className="paper">
-            <Typography component="h1" variant="h5">
-            Go out and visit your local breweries!
-            </Typography>
-
-            <form className='find-breweries-form' onSubmit={this.submitSearch}>
-              <Grid container spacing={16}>
-                <Grid item xs={12}>
-                  <TextField
-                    variant="outlined"
-                    type="text"
-                    required
-                    fullWidth
-                    id="search"
-                    label="Where you drinkin?"
-                    name="search"
-                    value={search}
-                    onChange={this.handleChange}
-                  />
-                </Grid>
-              </Grid>
-              <div className="search-btn-submit">
-                <Button type="submit" variant="contained" color="primary" fullWidth>Search</Button>
+        <div>
+          <Grid
+            container
+            direction="row"
+            justify="center"
+            alignItems="center"
+          >
+            <Grid item xs={10} sm={10}>
+              <div className="brewery-search-header">
+                <h1>Go out and visit your local breweries!</h1>
               </div>
-            </form>
+            </Grid>
+          </Grid>
+
+          <div className='find-breweries-container'>
+            <Paper>
+              <CssBaseline />
+              <div className="find-breweries-form">
+                <Grid
+                  container
+                  direction="row"
+                  justify="center"
+                  alignItems="center"
+                >
+                  <Grid item xs={10} sm={5}>
+                    <div className="brewery-search-form-header">
+                      <h2>Search Breweries by Location</h2>
+                    </div>
+                  </Grid>
+                </Grid>
+
+                <form onSubmit={this.submitSearch}>
+                  <Grid className="form-input" container spacing={24}>
+                    <Grid item xs={12}>
+                      <TextField
+                        variant="outlined"
+                        required
+                        fullWidth
+                        name='search'
+                        value={search}
+                        type='text'
+                        placeholder='Where you at?'
+                        onChange={this.handleChange} />
+                    </Grid>
+                  </Grid>
+
+                  <Grid
+                    container
+                    direction="row"
+                    justify="center"
+                    alignItems="center"
+                  >
+                    <Grid item xs={10} sm={4}>
+                      <div className="search-btn-submit">
+                        <Button type="submit" variant="contained" color="primary" fullWidth>Search</Button>
+                      </div>
+                    </Grid>
+                  </Grid>
+                </form>
+              </div>
+            </Paper>
           </div>
 
           <div className='returned-breweries'>

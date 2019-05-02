@@ -15,8 +15,8 @@ import EditReview from './resources/reviews/components/EditReview'
 import SearchBreweries from './resources/breweries/components/SearchBreweries'
 import SearchBeers from './resources/beers/components/SearchBeers'
 import CreateReviewFromSearch from './resources/beers/components/CreateReviewFromSearch'
+import Home from './resources/Home'
 
-// import Alert from 'react-bootstrap/Alert'
 import { withSnackbar, SnackbarProvider } from 'notistack'
 import Button from '@material-ui/core/Button'
 
@@ -67,6 +67,9 @@ class App extends Component {
             )} />
 
             {/* Resource Routes */}
+            <Route exact path='/' render={() => (
+              <Home snackBar={this.snackBar} user={user} />
+            )} />
             <AuthenticatedRoute user={user} exact path='/reviews' render={() => (
               <Reviews snackBar={this.snackBar} user={user} />
             )} />
@@ -95,5 +98,6 @@ class App extends Component {
     )
   }
 }
+// <div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
 
 export default withSnackbar(App)

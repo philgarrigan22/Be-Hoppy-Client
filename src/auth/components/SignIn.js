@@ -9,9 +9,9 @@ import Grid from '@material-ui/core/Grid'
 import Avatar from '@material-ui/core/Avatar'
 import Button from '@material-ui/core/Button'
 import CssBaseline from '@material-ui/core/CssBaseline'
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import Typography from '@material-ui/core/Typography'
 import TextField from '@material-ui/core/TextField'
+import Paper from '@material-ui/core/Paper'
 
 class SignIn extends Component {
   constructor () {
@@ -48,62 +48,64 @@ class SignIn extends Component {
     return (
       <Fragment>
         <div className="auth-form">
-          <CssBaseline />
-          <div className="paper">
-            <Avatar className="avatar">
-              <LockOutlinedIcon />
-            </Avatar>
-            <Typography component="h1" variant="h5">
-          Sign In
-            </Typography>
-            <form className="form" onSubmit={this.onSignIn}>
-              <Grid container spacing={16}>
-                <Grid item xs={12}>
-                  <TextField
-                    variant="outlined"
-                    type="email"
-                    required
-                    fullWidth
-                    id="email"
-                    label="Email Address"
-                    name="email"
-                    value={email}
-                    onChange={this.handleChange}
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <TextField
-                    variant="outlined"
-                    required
-                    fullWidth
-                    id="password"
-                    label="Password"
-                    name="password"
-                    value={password}
-                    type="password"
-                    onChange={this.handleChange}
-                  />
-                </Grid>
-              </Grid>
-              <div className="auth-btn-submit">
-                <Button
-                  type="submit"
-                  fullWidth
-                  variant="contained"
-                  color="primary"
-                >
+          <Paper>
+            <CssBaseline />
+            <div className="auth-style">
+              <Avatar className="avatar">
+                <img className="side-icon" src="https://i.imgur.com/1ItMBfx.png"/>
+              </Avatar>
+              <Typography component="h1" variant="h5">
                 Sign In
-                </Button>
-              </div>
-              <Grid container justify="flex-end">
-                <Grid item>
-                  <Link to="/sign-up" variant="body2">
-                  No account? Sign up
-                  </Link>
+              </Typography>
+              <form className="form" onSubmit={this.onSignIn}>
+                <Grid container spacing={16}>
+                  <Grid item xs={12}>
+                    <TextField
+                      variant="outlined"
+                      type="email"
+                      required
+                      fullWidth
+                      id="email"
+                      label="Email Address"
+                      name="email"
+                      value={email}
+                      onChange={this.handleChange}
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <TextField
+                      variant="outlined"
+                      required
+                      fullWidth
+                      id="password"
+                      label="Password"
+                      name="password"
+                      value={password}
+                      type="password"
+                      onChange={this.handleChange}
+                    />
+                  </Grid>
                 </Grid>
-              </Grid>
-            </form>
-          </div>
+                <div className="auth-btn-submit">
+                  <Button
+                    type="submit"
+                    fullWidth
+                    variant="contained"
+                    color="primary"
+                  >
+                Sign In
+                  </Button>
+                </div>
+                <Grid container justify="flex-end">
+                  <Grid item>
+                    <Link to="/sign-up" variant="body2">
+                  No account? Sign up
+                    </Link>
+                  </Grid>
+                </Grid>
+              </form>
+            </div>
+          </Paper>
         </div>
       </Fragment>
     )

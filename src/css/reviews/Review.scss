@@ -1,6 +1,33 @@
+.empty-results-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 3rem auto 3rem;
+  max-width: 1100px;
+}
+
+.edit-btn {
+  margin: 1rem 1rem 0 0;
+}
+
+.empty-results {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  padding: 1rem;
+  margin: 1rem;
+  text-align: center;
+}
+
 .my-reviews-header {
+  font-size: 3rem;
   display: flex;
   justify-content: center;
+  color: #fff;
+  text-shadow: 2px 2px 1px #000;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 4px;
+  margin-bottom: 2rem;
 }
 
 .review-content {

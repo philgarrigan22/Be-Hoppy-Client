@@ -8,10 +8,7 @@ import '../../../css/reviews/Review.scss'
 import LinearProgress from '@material-ui/core/LinearProgress'
 import Paper from '@material-ui/core/Paper'
 import Button from '@material-ui/core/Button'
-// import axios from 'axios'
-// import apiUrl from '../../apiConfig'
-// import Spinner from 'react-bootstrap/Spinner'
-// import Alert from 'react-bootstrap/Alert'
+import Grid from '@material-ui/core/Grid'
 
 class OneReview extends Component {
   constructor () {
@@ -70,21 +67,46 @@ class OneReview extends Component {
       <Fragment>
         <Paper>
           <div className="review-content" >
-            <p>Name: {beer}</p>
-            <p>Brewery: {brewery}</p>
+            <h2>{beer}</h2>
+            <h3>{brewery}</h3>
             <p>Your Rating: {rating}</p>
             <p>Type: {this.state.review.beer_type}</p>
             <p>Location: {location}</p>
             <p>Flavor: {flavor}</p>
-            <Button onClick ={this.handleDelete} variant="contained" color="secondary">
-              Delete Review
-            </Button>
-            <Button component={Link} to={this.props.match.url + '/edit'} variant="contained" color="primary">
-              Edit Review
-            </Button>
-            <Button component={Link} to="/reviews" variant="contained" color="primary">
-              Back
-            </Button>
+            <Grid
+              container
+              direction="row"
+              justify="center"
+              alignItems="center"
+            >
+              <Grid item xs={10} sm={5}>
+                <div className="edit-btn">
+                  <Button onClick ={this.handleDelete} variant="contained" color="secondary" fullWidth>
+                    Delete Review
+                  </Button>
+                </div>
+              </Grid>
+              <Grid item xs={10} sm={5}>
+                <div className="edit-btn">
+                  <Button component={Link} to={this.props.match.url + '/edit'} variant="contained" color="primary" fullWidth>
+                    Edit Review
+                  </Button>
+                </div>
+              </Grid>
+            </Grid>
+            <Grid container
+              direction="row"
+              justify="center"
+              alignItems="center"
+            >
+              <Grid item xs={10} sm={6}>
+                <div className="edit-btn">
+                  <Button component={Link} to="/reviews" variant="contained" color="primary" fullWidth>
+                    Back
+                  </Button>
+                </div>
+              </Grid>
+            </Grid>
           </div>
         </Paper>
       </Fragment>

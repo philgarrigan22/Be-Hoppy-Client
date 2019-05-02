@@ -9,6 +9,8 @@ import LinearProgress from '@material-ui/core/LinearProgress'
 import AddIcon from '@material-ui/icons/Add'
 import Button from '@material-ui/core/Button'
 import Paper from '@material-ui/core/Paper'
+import CssBaseline from '@material-ui/core/CssBaseline'
+import Grid from '@material-ui/core/Grid'
 
 class Reviews extends Component {
   constructor () {
@@ -46,21 +48,38 @@ class Reviews extends Component {
 
     if (noReviews) {
       return (
-        <Fragment>
+        <div className="empty-results-container">
           <Paper>
-            <h2>Looks like you have no reviews yet! Get started by reviewing your favorite beers, then check back here.</h2>
-            <Button component={Link} to="/reviews-create" variant="contained" color="secondary">
-                      Create Review
-              <AddIcon />
-            </Button>
+            <CssBaseline />
+            <div className="empty-results">
+              <h3>Looks like you have no reviews yet! Get started by reviewing your favorite beers, then check back here.</h3>
+              <Grid
+                container
+                direction="row"
+                justify="center"
+                alignItems="center"
+              >
+                <Grid item xs={10} sm={4}>
+                  <Button component={Link} to="/reviews-create" variant="contained" color="primary">
+                    Create Review
+                    <AddIcon />
+                  </Button>
+                </Grid>
+              </Grid>
+            </div>
           </Paper>
-        </Fragment>
+        </div>
       )
     } else if (reviews.length === 0) {
       return (
-        <div>
-          <h3>Grabbing your reviews.</h3>
-          <LinearProgress />
+        <div className="empty-results-container">
+          <Paper>
+            <CssBaseline />
+            <div className="empty-results">
+              <h3>Grabbing your reviews.</h3>
+              <LinearProgress />
+            </div>
+          </Paper>
         </div>
       )
     }
@@ -68,16 +87,32 @@ class Reviews extends Component {
       <Fragment>
         <div>
           <h1 className="my-reviews-header" >Reviews</h1>
-          <Button component={Link} to="/reviews-create" color="secondary" variant="contained">
+          <Grid
+            container
+            direction="row"
+            justify="center"
+            alignItems="center"
+          >
+            <Grid item xs={12} sm={5}>
+              <div className="review-btn-submit">
+                <Button component={Link} to="/reviews-create" color="secondary" variant="contained" fullWidth>
             Create New Review
-          </Button>
+                </Button>
+              </div>
+            </Grid>
+            <Grid item xs={12} sm={5}>
+              <div className="review-btn-submit">
+                <Button component={Link} to="/search-beer" variant="contained" color="primary" fullWidth>Search for beer</Button>
+              </div>
+            </Grid>
+          </Grid>
         </div>
         <div>
           {reviews.map(review => (
             <Paper key={review.id}>
               <div className="review-content" id={review.id}>
-                <p>Name: {review.beer}</p>
-                <p>Brewery: {review.brewery}</p>
+                <h2>{review.beer}</h2>
+                <h3>{review.brewery}</h3>
                 <p>Your Rating: {review.rating}</p>
                 <p>Type: {review.beer_type}</p>
                 <p>Location: {review.location}</p>

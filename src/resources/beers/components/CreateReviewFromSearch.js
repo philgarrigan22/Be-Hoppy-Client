@@ -23,6 +23,21 @@ class CreateReviewFromSearch extends Component {
     }
   }
 
+  componentDidMount () {
+    const { beerPlaceholder, breweryPlaceholder, typePlaceholder, locPlaceholder } = this.props.location.searchResults
+
+    this.setState({
+      review: {
+        beer: beerPlaceholder,
+        brewery: breweryPlaceholder,
+        rating: '',
+        beer_type: typePlaceholder,
+        location: locPlaceholder,
+        flavor: ''
+      }
+    })
+  }
+
   handleChange = (event) => {
     this.setState({ review: {
       ...this.state.review, [event.target.name]: event.target.value
@@ -54,7 +69,7 @@ class CreateReviewFromSearch extends Component {
 
       if (created) {
         return <Redirect to={{
-          pathname: `/reviews/${review.id}`
+          pathname: '/reviews'
         }} />
       }
 

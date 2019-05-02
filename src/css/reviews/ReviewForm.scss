@@ -1,18 +1,45 @@
 .create-btn-submit {
-  margin-top: 1rem;
+  margin: 1rem 1rem 0 0;
 }
 
-.search-beers-form {
-  margin: 1rem 0 3rem;
-  width: 100%;
+.review-btn-submit {
+  margin: .5rem 1rem;
 }
 
-.found-beers row {
+.hop-icon {
+  height: 33px;
+}
+
+.review-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 7rem auto 0;
+  max-width: 1100px;
+}
+
+.review-form {
   align-items: center;
   display: flex;
   flex-direction: column;
-  margin-top: 2rem;
+  margin: 1rem;
+  padding: 1rem;
+
+  h1 {
+    border-bottom: 1px solid #000;
+    padding-bottom: 8px;
+    margin-bottom: 2rem;
+  }
 }
+
+.form-input {
+  padding-bottom: 1rem;
+}
+
+// .search-beers-form {
+//   margin: 1rem 0 3rem;
+//   width: 100%;
+// }
 
 // .beer-card {
 //   display: flex;
