@@ -16,7 +16,6 @@ import SearchBreweries from './resources/breweries/components/SearchBreweries'
 import SearchBeers from './resources/beers/components/SearchBeers'
 import CreateReviewFromSearch from './resources/beers/components/CreateReviewFromSearch'
 
-// import Alert from 'react-bootstrap/Alert'
 import { withSnackbar, SnackbarProvider } from 'notistack'
 import Button from '@material-ui/core/Button'
 
