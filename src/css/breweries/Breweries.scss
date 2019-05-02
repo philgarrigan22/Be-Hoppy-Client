@@ -1,17 +1,63 @@
-.search-btn-submit {
-  margin-top: 1rem;
+// .search-btn-submit {
+//   margin-top: 1rem;
+// }
+
+// .find-breweries-form {
+//   margin-top: 1rem;
+//   width: 100%;
+// }
+
+.brewery-search-header {
+  font-size: 1.3rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  text-shadow: 2px 2px 1px #000;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 4px;
+  margin-bottom: 1rem;
+}
+
+.brewery-search-form-header {
+    align-items: center;
+    display: flex;
+    padding-bottom: 8px;
+    justify-content: center;
+    text-align: center;
+}
+
+.empty-results-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 3rem auto 3rem;
+  max-width: 1100px;
+}
+
+.empty-results {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  padding: 1rem;
+  margin: 1rem;
+  text-align: center;
+}
+
+.find-breweries-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: .5rem auto 3rem;
+  max-width: 1100px;
 }
 
 .find-breweries-form {
-  margin-top: 1rem;
-  width: 100%;
+  padding: 1rem;
 }
 
-.paper {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  margin: 2rem 0 4rem;
+.search-btn-submit {
+  margin: 2rem 1rem 1rem 0;
 }
 
 .yelp-card-img {
@@ -24,22 +70,3 @@
 .yelp-card {
   margin-bottom: 2rem;
 }
-
-//
-// .yelp-title {
-//   text-align: center;
-//   color: #ff5100;
-// }
-//
-// .yelp-header-main {
-//   color: #BA2F00;
-//   text-align: center;
-//   font-family: 'Gloria Hallelujah', cursive;
-// }
-//
-// .yelp-header-main {
-//   color: RGB(254, 227, 121);
-//   text-shadow: 1px 1px black;
-//   font-size: 48px;
-//   margin-bottom: 15px;
-// }

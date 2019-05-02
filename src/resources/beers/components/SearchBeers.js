@@ -50,6 +50,18 @@ class SearchBeers extends Component {
     if (empty) {
       return (
         <div>
+          <Grid
+            container
+            direction="row"
+            justify="center"
+            alignItems="center"
+          >
+            <Grid item xs={10} sm={10}>
+              <div className="beer-search-header">
+                <h1>Search Beers</h1>
+              </div>
+            </Grid>
+          </Grid>
           <div className="search-beers-container">
             <Paper>
               <CssBaseline />
@@ -61,7 +73,7 @@ class SearchBeers extends Component {
                   alignItems="center"
                 >
                   <Grid item xs={10} sm={5}>
-                    <div className="beer-search-header">
+                    <div className="beer-search-form-header">
                       <h2>Search Beers by Name</h2>
                     </div>
                   </Grid>
@@ -140,7 +152,7 @@ class SearchBeers extends Component {
           >
             <Grid item xs={10} sm={10}>
               <div className="beer-search-header">
-                <h1>Search Beers by Name</h1>
+                <h1>Search Beers</h1>
               </div>
             </Grid>
           </Grid>
