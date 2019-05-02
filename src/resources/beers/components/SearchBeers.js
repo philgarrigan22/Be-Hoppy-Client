@@ -90,12 +90,12 @@ class SearchBeers extends Component {
                     justify="center"
                     alignItems="center"
                   >
-                    <Grid item xs={10} sm={5}>
+                    <Grid item xs={10} sm={4}>
                       <div className="search-btn-submit">
                         <Button type='submit' variant="contained" color="primary" fullWidth>Search</Button>
                       </div>
                     </Grid>
-                    <Grid item xs={10} sm={5}>
+                    <Grid item xs={10} sm={4}>
                       <div className="search-btn-submit">
                         <Button component={Link} to="/reviews" variant="contained" color="secondary" fullWidth>Back to Reviews</Button>
                       </div>
@@ -106,14 +106,23 @@ class SearchBeers extends Component {
             </Paper>
           </div>
 
-          <div className="search-beers-container-empty">
+          <div className="empty-results-container">
             <Paper>
               <CssBaseline />
               <div className="empty-results">
-                <h2>Looks like that beer is not in our system. Search for another, or create a new review using your super secret beer.</h2>
-                <Button component={Link} to="/reviews-create" variant="contained" color="secondary">
+                <h3>Looks like that beer is not in our system. Search for another, or create a new review using your super secret beer.</h3>
+                <Grid
+                  container
+                  direction="row"
+                  justify="center"
+                  alignItems="center"
+                >
+                  <Grid item xs={10} sm={4}>
+                    <Button component={Link} to="/reviews-create" variant="contained" color="primary" fullWidth>
                       Create Review
-                </Button>
+                    </Button>
+                  </Grid>
+                </Grid>
               </div>
             </Paper>
           </div>

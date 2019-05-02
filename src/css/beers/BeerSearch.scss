@@ -1,3 +1,7 @@
+.beer-card {
+  margin-bottom: 2rem;
+}
+
 .beer-search-header {
   h2 {
     align-items: center;
@@ -10,12 +14,38 @@
   }
 }
 
+.empty-results-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 3rem auto 3rem;
+  max-width: 1100px;
+}
+
+.empty-results {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  padding: 1rem;
+  margin: 1rem;
+  text-align: center;
+}
+
+.find-breweries-form {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.form-input {
+  padding-bottom: 1rem;
+}
+
 .search-beers-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top:5rem;
-  margin-bottom: 3rem;
+  margin: 5rem auto 3rem;
+  max-width: 1100px;
 }
 
 .search-beer-form {
@@ -30,30 +60,16 @@
   margin: 2rem 1rem 1rem 0;
 }
 
-.form-input {
-  padding-bottom: 1rem;
-}
+// .paper {
+//   align-items: center;
+//   display: flex;
+//   flex-direction: column;
+//   margin: 2rem 0 4rem;
+// }
 
-
-.find-breweries-form {
-  margin-top: 1rem;
-  width: 100%;
-}
-
-.paper {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  margin: 2rem 0 4rem;
-}
-
-.beer-card {
-  margin-bottom: 2rem;
-}
-
-.found-beers row {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  margin-top: 2rem;
-}
+// .found-beers row {
+//   align-items: center;
+//   display: flex;
+//   flex-direction: column;
+//   margin-top: 2rem;
+// }
