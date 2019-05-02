@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import { withRouter, Link } from 'react-router-dom'
 
 import { searchBeer } from '../api.js'
@@ -50,74 +50,135 @@ class SearchBeers extends Component {
 
     if (empty) {
       return (
-        <Fragment>
-          <CssBaseline />
-          <div className='search-beers-container'>
-            <h3 className='beer-search-header'>{'Search Beers by Name'}</h3>
-
-            <form className='search-beers-form' onSubmit={this.submitSearch}>
-              <Grid container spacing={16}>
-                <Grid item xs={12}>
-                  <TextField
-                    variant="outlined"
-                    type="text"
-                    required
-                    fullWidth
-                    id="search"
-                    label="Search by beer or brewery"
-                    name="search"
-                    value={search}
-                    onChange={this.handleChange}
-                  />
+        <div>
+          <div className="search-beers-container">
+            <Paper>
+              <CssBaseline />
+              <div className="search-beer-form">
+                <Grid
+                  container
+                  direction="row"
+                  justify="center"
+                  alignItems="center"
+                >
+                  <Grid item xs={10} sm={5}>
+                    <div className="beer-search-header">
+                      <h2>Search Beers by Name</h2>
+                    </div>
+                  </Grid>
                 </Grid>
-              </Grid>
-              <div className="create-btn-submit">
-                <Button type='submit' variant="contained" color="primary" fullWidth>Search</Button>
-              </div>
-              <div className="create-btn-submit">
-                <Button component={Link} to="/reviews" variant="contained" color="secondary" fullWidth>Back to Reviews</Button>
-              </div>
-            </form>
 
+                <form className='search-beers-form' onSubmit={this.submitSearch}>
+                  <Grid container spacing={24}>
+                    <Grid item xs={12}>
+                      <TextField
+                        variant="outlined"
+                        type="text"
+                        required
+                        fullWidth
+                        id="search"
+                        label="Search by beer or brewery"
+                        name="search"
+                        value={search}
+                        onChange={this.handleChange}
+                      />
+                    </Grid>
+                  </Grid>
+                  <Grid
+                    container
+                    direction="row"
+                    justify="center"
+                    alignItems="center"
+                  >
+                    <Grid item xs={10} sm={5}>
+                      <div className="search-btn-submit">
+                        <Button type='submit' variant="contained" color="primary" fullWidth>Search</Button>
+                      </div>
+                    </Grid>
+                    <Grid item xs={10} sm={5}>
+                      <div className="search-btn-submit">
+                        <Button component={Link} to="/reviews" variant="contained" color="secondary" fullWidth>Back to Reviews</Button>
+                      </div>
+                    </Grid>
+                  </Grid>
+                </form>
+              </div>
+            </Paper>
           </div>
-          <Paper>
-            <h2>Looks like that beer is not in our system. Search for another, or create a new review using your super secret beer.</h2>
-            <Button component={Link} to="/reviews-create" variant="contained" color="secondary">
+
+          <div className="search-beers-container-empty">
+            <Paper>
+              <CssBaseline />
+              <div className="empty-results">
+                <h2>Looks like that beer is not in our system. Search for another, or create a new review using your super secret beer.</h2>
+                <Button component={Link} to="/reviews-create" variant="contained" color="secondary">
                       Create Review
-            </Button>
-          </Paper>
-        </Fragment>
+                </Button>
+              </div>
+            </Paper>
+          </div>
+
+        </div>
+
       )
     } else {
       return (
-        <Fragment>
-          <CssBaseline />
-          <div className='search-beers-container'>
-            <h3 className='beer-search-header'>{'Search Beers by Name'}</h3>
-            <form className='search-beers-form' onSubmit={this.submitSearch}>
-              <Grid container spacing={16}>
-                <Grid item xs={12}>
-                  <TextField
-                    variant="outlined"
-                    type="text"
-                    required
-                    fullWidth
-                    id="search"
-                    label="Search by beer or brewery"
-                    name="search"
-                    value={search}
-                    onChange={this.handleChange}
-                  />
+        <div>
+          <div className="search-beers-container">
+            <Paper>
+              <CssBaseline />
+              <div className="search-beer-form">
+                <Grid
+                  container
+                  direction="row"
+                  justify="center"
+                  alignItems="center"
+                >
+                  <Grid item xs={10} sm={5}>
+                    <div className="beer-search-header">
+                      <h2>Search Beers by Name</h2>
+                    </div>
+                  </Grid>
                 </Grid>
-              </Grid>
-              <div className="create-btn-submit">
-                <Button type='submit' variant="contained" color="primary" fullWidth>Search</Button>
+
+                <form onSubmit={this.submitSearch}>
+                  <Grid className="form-input" container spacing={24}>
+                    <Grid item xs={12}>
+                      <TextField
+                        variant="outlined"
+                        type="text"
+                        required
+                        fullWidth
+                        id="search"
+                        label="Search by beer or brewery"
+                        name="search"
+                        value={search}
+                        onChange={this.handleChange}
+                      />
+                    </Grid>
+                  </Grid>
+                  <Grid
+                    container
+                    direction="row"
+                    justify="center"
+                    alignItems="center"
+                  >
+                    <Grid item xs={10} sm={5}>
+                      <div className="search-btn-submit">
+                        <Button type='submit' variant="contained" color="primary" fullWidth>Search</Button>
+                      </div>
+                    </Grid>
+                    <Grid item xs={10} sm={5}>
+                      <div className="search-btn-submit">
+                        <Button component={Link} to="/reviews" variant="contained" color="secondary" fullWidth>Back to Reviews</Button>
+                      </div>
+                    </Grid>
+                  </Grid>
+                </form>
               </div>
-              <div className="create-btn-submit">
-                <Button component={Link} to="/reviews" variant="contained" color="secondary" fullWidth>Back to Reviews</Button>
-              </div>
-            </form>
+            </Paper>
           </div>
+
           <div className='found-beers row'>
             {results.map(beer =>
               <div key={beer.fields.id} className='beer-card'>
@@ -159,7 +220,7 @@ class SearchBeers extends Component {
               </div>
             )}
           </div>
-        </Fragment>
+        </div>
       )
     }
   }

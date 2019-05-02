@@ -1,6 +1,39 @@
-.search-btn-submit {
-  margin-top: 1rem;
+.beer-search-header {
+  h2 {
+    align-items: center;
+    display: flex;
+    border-bottom: 1px solid #000;
+    padding-bottom: 8px;
+    margin-bottom: 3.5rem;
+    justify-content: center;
+    text-align: center;
+  }
 }
+
+.search-beers-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top:5rem;
+  margin-bottom: 3rem;
+}
+
+.search-beer-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.search-btn-submit {
+  margin: 2rem 1rem 1rem 0;
+}
+
+.form-input {
+  padding-bottom: 1rem;
+}
+
 
 .find-breweries-form {
   margin-top: 1rem;
