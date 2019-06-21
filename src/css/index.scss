@@ -18,8 +18,64 @@ body {
   width: 80%;
 }
 
+.home-container {
+  background-color: rgba(255, 255, 255, .7);
+  box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.2),
+  0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 5rem auto 0;
+  max-width: 1100px;
+}
+
+.home-content {
+  display: flex;
+  flex-direction: column;
+  color: #000;
+  margin: 0 80px;
+
+  h3 {
+    // border-bottom: 1px solid #fff;
+    // padding: 8px 20px;
+    margin: 5px;
+  }
+  ul {
+    margin-top: 8px;
+    margin-bottom: 30px;
+  }
+}
+.home-content-title {
+  align-items: center;
+  border-bottom: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  color: #000;
+  margin: 8px 80px;
+}
+
 @media (max-width: 768px) {
   body {
     background-position: bottom;
+    background-attachment: fixed;
+    background-image: url('../imgs/BarBackground.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .home-content {
+    margin: 0 10px;
+
+    h2 {
+      font-size: 1rem;
+    }
+    h3{
+      font-size: 1rem;
+    }
+  }
+
+  .home-content-title {
+    margin: 8px 10px;
+    font-size: .75rem;
   }
 }
