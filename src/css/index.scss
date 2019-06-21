@@ -57,6 +57,10 @@ body {
 @media (max-width: 768px) {
   body {
     background-position: bottom;
+    background-attachment: fixed;
+    background-image: url('../imgs/BarBackground.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   .home-content {
