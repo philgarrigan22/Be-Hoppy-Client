@@ -58,7 +58,7 @@ class SignIn extends Component {
                 Sign In
               </Typography>
               <form className="form" onSubmit={this.onSignIn}>
-                <Grid container spacing={16}>
+                <Grid container spacing={2}>
                   <Grid item xs={12}>
                     <TextField
                       variant="outlined"
