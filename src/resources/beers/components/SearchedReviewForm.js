@@ -18,14 +18,14 @@ const SearchedReviewForm = (
         <h1>Craft Your Own H<img className="hop-icon" src="https://i.imgur.com/19ID0Li.png"/>ppinions</h1>
 
         <form className="form" onSubmit={handleSubmit}>
-          <Grid container spacing={16}>
+          <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
                 variant="outlined"
                 required
                 fullWidth
                 id="beer"
-                label={beerPlaceholder}
+                label="Beer Name"
                 name="beer"
                 value={beer}
                 type="text"
@@ -38,7 +38,7 @@ const SearchedReviewForm = (
                 required
                 fullWidth
                 id="brewery"
-                label={breweryPlaceholder}
+                label="Brewery"
                 name="brewery"
                 value={brewery}
                 type="text"
@@ -51,7 +51,7 @@ const SearchedReviewForm = (
                 required
                 fullWidth
                 id="rating"
-                label="Rating"
+                label="Rating (1-10)"
                 name="rating"
                 value={rating}
                 type="number"
@@ -64,7 +64,7 @@ const SearchedReviewForm = (
                 required
                 fullWidth
                 id="beer_type"
-                label={typePlaceholder}
+                label="Beer Type"
                 name="beer_type"
                 value={type}
                 type="text"
@@ -77,7 +77,7 @@ const SearchedReviewForm = (
                 required
                 fullWidth
                 id="location"
-                label={locPlaceholder}
+                label="Location"
                 name="location"
                 value={loc}
                 type="text"

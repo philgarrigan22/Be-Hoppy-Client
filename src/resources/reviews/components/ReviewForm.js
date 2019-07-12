@@ -18,7 +18,7 @@ const ReviewForm = (
         <h1>Craft Your Own H<img className="hop-icon" src="https://i.imgur.com/19ID0Li.png"/>ppinions</h1>
 
         <form onSubmit={handleSubmit}>
-          <Grid className="form-input" container spacing={24}>
+          <Grid className="form-input" container spacing={2}>
             <Grid item xs={6} sm={6}>
               <TextField
                 variant="outlined"
