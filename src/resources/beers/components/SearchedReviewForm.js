@@ -18,7 +18,7 @@ const SearchedReviewForm = (
         <h1>Craft Your Own H<img className="hop-icon" src="https://i.imgur.com/19ID0Li.png"/>ppinions</h1>
 
         <form className="form" onSubmit={handleSubmit}>
-          <Grid container spacing={16}>
+          <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
                 variant="outlined"
