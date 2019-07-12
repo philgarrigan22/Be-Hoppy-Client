@@ -25,7 +25,7 @@ const SearchedReviewForm = (
                 required
                 fullWidth
                 id="beer"
-                label={beerPlaceholder}
+                label="Beer Name"
                 name="beer"
                 value={beer}
                 type="text"
@@ -38,7 +38,7 @@ const SearchedReviewForm = (
                 required
                 fullWidth
                 id="brewery"
-                label={breweryPlaceholder}
+                label="Brewery"
                 name="brewery"
                 value={brewery}
                 type="text"
@@ -51,7 +51,7 @@ const SearchedReviewForm = (
                 required
                 fullWidth
                 id="rating"
-                label="Rating"
+                label="Rating (1-10)"
                 name="rating"
                 value={rating}
                 type="number"
@@ -64,7 +64,7 @@ const SearchedReviewForm = (
                 required
                 fullWidth
                 id="beer_type"
-                label={typePlaceholder}
+                label="Beer Type"
                 name="beer_type"
                 value={type}
                 type="text"
@@ -77,7 +77,7 @@ const SearchedReviewForm = (
                 required
                 fullWidth
                 id="location"
-                label={locPlaceholder}
+                label="Location"
                 name="location"
                 value={loc}
                 type="text"
